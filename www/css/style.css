@@ -1,1 +1,16 @@
 /* Empty. Add your own CSS if you like */
+
+body {
+  height: 100%;
+}
+
+/* ion-content makes an inner wrapper */
+ion-content, ion-content > * {
+  height: 100%
+}
+
+tocker {
+  display: block;
+  height: 50%;
+  width: 100%;
+}

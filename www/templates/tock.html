@@ -1,0 +1,9 @@
+<ion-view view-title="Tock">
+  <ion-content>
+    <tocker ng-repeat="_ in app.players track by $index"
+        tocker-index="$index"
+        tocker-time="app.settings.playerTime">
+      {{$index}}
+    </tocker>
+  </ion-content>
+</ion-view>

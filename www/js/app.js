@@ -4,7 +4,12 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('tock', ['ionic', 'tock.controllers'])
+angular.module('tock', [
+  'ionic',
+  'tock.controllers',
+  'tock.factories',
+  'tock.directives'
+])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -27,47 +32,20 @@ angular.module('tock', ['ionic', 'tock.controllers'])
       url: '/app',
       abstract: true,
       templateUrl: 'templates/main.html',
-      controller: 'AppCtrl'
+      controller: 'AppCtrl as app'
     })
 
-    .state('app.search', {
-      url: '/search',
+    .state('app.tock', {
+      url: '/tock',
+      controller: 'AppCtrl as app',
       views: {
         'bodyContent': {
-          templateUrl: 'templates/search.html'
+          templateUrl: 'templates/tock.html'
         }
       }
     })
 
-    .state('app.browse', {
-      url: '/browse',
-      views: {
-        'bodyContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'bodyContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-    .state('app.single', {
-      url: '/playlists/:playlistId',
-      views: {
-        'bodyContent': {
-          templateUrl: 'templates/playlist.html',
-          controller: 'PlaylistCtrl'
-        }
-      }
-    });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/tock');
 });
