@@ -1,7 +1,7 @@
 {
-  "name": "tock",
+  "name": "tocker",
   "version": "1.0.0",
-  "description": "tock: An Ionic project",
+  "description": "Like a chess clock on your phone",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
