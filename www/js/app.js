@@ -8,7 +8,8 @@ angular.module('tock', [
   'ionic',
   'tock.controllers',
   'tock.factories',
-  'tock.directives'
+  'tock.directives',
+  'tock.filters'
 ])
 
 .run(function($ionicPlatform) {

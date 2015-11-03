@@ -10,8 +10,7 @@ angular.module('tock.directives', ['tock.factories'])
     },
     template: [
       '<span class="tocker-text">',
-        '<span ng-show="tckr.isRunning">running</span>',
-        '<span ng-hide="tckr.isRunning">not running</span>',
+        '{{tckr.time | tockTime}}',
       '</span>'
     ].join('\n'),
     link: function(scope, element, attrs) {
@@ -21,6 +20,8 @@ angular.module('tock.directives', ['tock.factories'])
 
       var t = scope.tckr = {};
       t.isRunning = false;
+
+      t.time = timeLeft;
 
       element.on('click', function() {
         scope.$apply(function() {
