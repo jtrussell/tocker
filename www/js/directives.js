@@ -11,7 +11,8 @@ angular.module('tock.directives', ['tock.factories'])
     template: [
       '<span class="tocker-text">',
         '{{tckr.time | tockTime}}',
-      '</span>'
+      '</span>',
+      '<span class="tocker-progress"></span>'
     ].join('\n'),
     link: function(scope, element, attrs) {
       var index = scope.tockerIndex
