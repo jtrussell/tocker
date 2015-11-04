@@ -17,6 +17,11 @@ tocker {
   text-align: center;
   vertical-align: middle;
   border-top: 1px solid #eee;
+  transition: background-color 2s;
+}
+
+tocker.dead {
+  background-color: #f00;
 }
 
 tocker:first-child {
@@ -45,6 +50,7 @@ tocker .tocker-progress {
   width: 100%;
   background-color: #ccc;
   transition: background-color 0.5s;
+  transition: width .3s;
 }
 
 tocker.active .tocker-progress {

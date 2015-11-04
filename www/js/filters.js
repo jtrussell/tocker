@@ -18,7 +18,7 @@ angular.module('tock.filters', [])
     tSecs = tSecs % 3600;
 
     var mins = Math.floor(tSecs / 60)
-      , secs = tSecs % 60;
+      , secs = Math.floor(tSecs % 60);
     return hrs + ':' + padLeft(mins) + ':' + padLeft(secs);
   };
 });

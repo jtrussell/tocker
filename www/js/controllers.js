@@ -10,10 +10,11 @@ angular.module('tock.controllers', ['tock.factories'])
   var self = this;
   self.settings = settings;
 
-  self.players = []
-  self.players.length = self.settings.playerCount;
-
   self.isPaused = true;
+
+  self.restart = function() {
+    $scope.$broadcast('tockerEvent_restart');
+  };
 
   $scope.$on('tockerEvent_click', function(event, tIndex, tRunning) {
     if(tRunning) {
