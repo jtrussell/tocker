@@ -25,6 +25,7 @@ angular.module('tock.directives', ['tock.factories'])
         t.isRunning = false;
         timeInitial = scope.tockerTime * 60 * 1000
         t.time = timeInitial;
+        element.removeClass('dead');
       };
 
       var tStart = function() {
