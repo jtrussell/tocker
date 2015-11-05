@@ -21,7 +21,7 @@ tocker {
 }
 
 tocker.dead {
-  background-color: #f00;
+  background-color: #af111c;
 }
 
 tocker:first-child {
@@ -46,7 +46,7 @@ tocker .tocker-progress {
   display: block;
   position: absolute;
   bottom: 0px;
-  height: 5px;
+  height: 8px;
   width: 100%;
   background-color: #ccc;
   transition: background-color 0.5s;
@@ -54,5 +54,5 @@ tocker .tocker-progress {
 }
 
 tocker.active .tocker-progress {
-  background-color: #f00;
+  background-color: #af111c;
 }
