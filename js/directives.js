@@ -26,6 +26,7 @@ angular.module('tock.directives', ['tock.factories'])
         timeInitial = scope.tockerTime * 60 * 1000
         t.time = timeInitial;
         element.removeClass('dead');
+        getElProg().css('width', '100%');
       };
 
       var tStart = function() {
@@ -42,7 +43,7 @@ angular.module('tock.directives', ['tock.factories'])
       };
 
       var tProg = function() {
-        var $elProg = element.children().eq(1)
+        var $elProg = getElProg()
           , prog = Math.floor(100 * t.time / timeInitial);
         $elProg.css('width', prog + '%');
       };
@@ -57,6 +58,10 @@ angular.module('tock.directives', ['tock.factories'])
           element.addClass('dead');
         }
         $timeout(tRun, 100);
+      };
+
+      var getElProg = function() {
+        return element.children().eq(1);
       };
 
       tInit();
