@@ -56,6 +56,7 @@ angular.module('tock.directives', ['tock.factories'])
         tProg();
         if(!t.time) {
           element.addClass('dead');
+          scope.$emit('tockerEvent_timeout');
         }
         $timeout(tRun, 100);
       };
